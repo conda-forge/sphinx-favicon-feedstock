@@ -1,18 +1,18 @@
 {% set name = "sphinx-favicon" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sphinx-favicon-{{ version }}.tar.gz
-  sha256: df796de32125609c1b4a8964db74270ebf4502089c27cd53f542354dc0b57e8e
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 6f65939fc2a6ac4259c88b09169f0b72681cd4c03dd1d0cf91c57a1fa314e50b
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
